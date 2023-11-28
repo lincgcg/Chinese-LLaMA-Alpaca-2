@@ -20,15 +20,15 @@ output_dir=/data/Chinese-LLaMA-2/output
 
 deepspeed_config_file=ds_zero2_no_offload.json
 
-num_nodes = 2
-num_gpu_per_node = 8
-node_rank = 0
-master_addr = 10.3.0.55
-master_port = 12345
+num_nodes=2
+num_gpu_per_node=8
+node_rank=0
+master_addr=10.3.0.55
+master_port=12345
 
 torchrun \
   --nnodes ${num_nodes} \
-  --nproc_per_node ${num_gpu_per_node} 
+  --nproc_per_node ${num_gpu_per_node} \
   --node_rank ${node_rank} \
   --master_addr ${master_addr} \
   --master_port ${master_port} \
